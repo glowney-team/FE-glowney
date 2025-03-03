@@ -1,0 +1,41 @@
+---
+name: Bug report
+about: "발견한 버그를 보고합니다.\t"
+title: ''
+labels: ''
+assignees: ''
+
+---
+
+name: Bug Report
+description: 발견한 버그를 보고합니다.
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Assignees, Labels, Projects 체크해 주세요.
+  - type: textarea
+    attributes:
+      label: 📝 개요
+      description: 버그에 대한 설명을 작성해 주세요.
+      placeholder: 잘못된 계정 정보로 로그인 시 에러메시지 노출되지 않음
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 😃 기대했던 결과
+      placeholder: Label, Input 색 변경, Input 하단에 메시지 노출
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 😱 실제 결과
+      placeholder: 아무 일도 일어나지 않음
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 📸 스크린샷
+      description: 버그 발생 스크린샷을 업로드해 주세요.
+    validations:
+      required: false
