@@ -11,10 +11,10 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+  ...compat.plugins('prettier'),
   {
     rules: {
       semi: ['error', 'always'], // 세미콜론 필수
-      quotes: ['error', 'double'], // 더블 쿼트 사용 강제
       indent: ['error', 2], // 들여쓰기 2칸
       'no-console': 'warn', // console.log 사용 시 경고
       'no-unused-vars': 'warn', // 사용되지 않는 변수 경고

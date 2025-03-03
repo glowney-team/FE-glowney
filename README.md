@@ -66,7 +66,9 @@ yarn lint
 
 - **ESLint (`eslint`@9)** - 코드 스타일 검사
 - **Next.js ESLint 설정 (`eslint-config-next`@15.2.0)** - Next.js 환경에 맞춘 ESLint 설정
+- **ESLint-Prettier 설정 (eslint-config-prettier@9.1.0)** - ESLint와 Prettier 충돌 방지
 - **TypeScript 타입 지원 (`@types/react`, `@types/react-dom`, `@types/node`)**
+- **Husky (husky)** - Git Hooks 자동화
 
 ## 🔒 라이선스
 
