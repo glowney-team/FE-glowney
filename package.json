@@ -27,5 +27,8 @@
     "eslint-config-next": "15.2.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "npm": "npm 대신 yarn을 사용해주세요"
   }
 }
