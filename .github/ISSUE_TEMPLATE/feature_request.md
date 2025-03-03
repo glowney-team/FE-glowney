@@ -1,12 +1,3 @@
----
-name: Feature request
-about: 기능을 추가 및 업데이트합니다.
-title: ''
-labels: ''
-assignees: ''
-
----
-
 name: Feature Request
 description: 기능을 추가 및 업데이트합니다.
 body:
