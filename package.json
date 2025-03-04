@@ -9,8 +9,10 @@
     "lint": "next lint",
     "postinstall": "husky",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable",
-    "preinstall": "if [ \"$(npm -v)\" ]; then echo '⚠️  Please use Yarn instead of npm'; exit 1; fi"
+    "postpack": "pinst --enable"
+  },
+  "engines": {
+    "npm": "please-use-yarn"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
