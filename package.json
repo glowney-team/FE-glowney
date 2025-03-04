@@ -9,7 +9,8 @@
     "lint": "next lint",
     "postinstall": "husky",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "preinstall": "if [ \"$(npm -v)\" ]; then echo '⚠️  Please use Yarn instead of npm'; exit 1; fi"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -34,8 +35,5 @@
     "prettier": "3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "engines": {
-    "npm": "npm 대신 yarn을 사용해주세요"
   }
 }

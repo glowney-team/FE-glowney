@@ -12,7 +12,6 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  eslintPluginPrettierRecommended,
   {
     rules: {
       'no-console': 'warn', // console.log 사용 시 경고
@@ -21,6 +20,7 @@ const eslintConfig = [
       'react-hooks/exhaustive-deps': 'warn', // React Hook 의존성 체크 경고
     },
   },
+  eslintPluginPrettierRecommended,
 ];
 
 export default eslintConfig;
