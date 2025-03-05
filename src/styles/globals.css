@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: var(--font-pretendard);
+  --padding-container: 1.5rem;
 }
 
 :root {
@@ -15,7 +16,9 @@
     --foreground: #171717;
   }
 }
-
+html {
+  touch-action: manipulation;
+}
 body {
   color: var(--foreground);
   background: var(--background);
