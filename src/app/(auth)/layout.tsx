@@ -1,4 +1,3 @@
-import '@/styles/components.css';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 

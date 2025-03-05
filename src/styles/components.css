@@ -2,9 +2,12 @@
 
 @layer components {
   .AppLogo {
-    @apply flex gap-2 items-center font-bold select-none text-xl @lg:text-3xl;
+    @apply flex gap-2 items-center  select-none;
     .LogoIcon {
       @apply size-6 @lg:size-8;
+    }
+    .LogoText {
+      @apply font-bold text-xl @lg:text-3xl;
     }
   }
 }
