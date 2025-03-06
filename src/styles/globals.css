@@ -22,5 +22,6 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-sans);
+  font-family: var(--font-pretendard);
+  @apply bg-stone-50;
 }

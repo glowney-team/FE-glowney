@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={pretendard.variable}>
-      <body className="flex justify-center antialiased">{children}</body>
+      <body className="antialiased ">{children}</body>
     </html>
   );
 }

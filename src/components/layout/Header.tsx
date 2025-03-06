@@ -2,8 +2,13 @@ import { AppLogo } from '../common/AppLogo';
 
 export function Header() {
   return (
-    <header className="flex items-center h-[60px] px-container ">
-      <AppLogo labelType="full" />
+    <header
+      className="container flex flex-col sticky top-0 z-10
+  justify-center h-[60px] px-container  bg-stone-50"
+    >
+      <div className="flex">
+        <AppLogo labelType="symbol" />
+      </div>
     </header>
   );
 }
