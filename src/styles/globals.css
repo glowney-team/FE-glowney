@@ -2,11 +2,16 @@
 
 @theme {
   --font-sans: var(--font-pretendard);
+  --padding-container: 1.5rem;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+::selection {
+  background-color: oklch(0.723 0.219 149.477); /* ✅ 예시: Glowney의 브랜드 색상 */
+  color: white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,9 +20,12 @@
     --foreground: #171717;
   }
 }
-
+html {
+  touch-action: manipulation;
+}
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-sans);
+  font-family: var(--font-pretendard);
+  @apply bg-stone-50;
 }
