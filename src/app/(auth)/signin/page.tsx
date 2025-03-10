@@ -2,34 +2,32 @@ import LoginForm from '@/components/auth/LoginForm';
 import OAuthButtons from '@/components/auth/OAuthButtons';
 import Divider from '@/components/common/Divider';
 import Link from 'next/link';
+import * as motion from 'motion/react-client';
+import AnimatedHeading from '@/components/common/AnimatedHeading';
 
 export const SignInPage = () => {
   return (
-    <div className="h-full flex flex-col items-center gap-5 justify-center">
-      <PageHeading />
+    <motion.div
+      className="h-full flex flex-col items-center gap-5 justify-center px-container"
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
+      <AnimatedHeading />
       <div className="w-full max-w-sm flex flex-col gap-3">
         <LoginForm />
         <Divider label="or" />
         <OAuthButtons />
-        <SignUpPrompt />
+        <RegisterPrompt />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-const PageHeading: React.FC = () => {
+const RegisterPrompt: React.FC = () => {
   return (
-    <h1 className="text-center font-semibold text-2xl @lg:text-3xl py-5">
-      예뻐지는 여정 <br />
-      <span className="font-bold">Glowney</span>와 함께하세요.
-    </h1>
-  );
-};
-
-const SignUpPrompt: React.FC = () => {
-  return (
-    <div className="p-6 text-center text-sm">
-      아직 회원이 아니신가요?{' '}
+    <div className="p-6 text-center text-base">
+      아직 회원이 아니신가요?
       <Link href="/register" className="font-bold text-green-500">
         회원가입
       </Link>

@@ -14,7 +14,8 @@
 
   /* 버튼 */
   .button {
-    @apply cursor-pointer flex items-center justify-center gap-2  transition-all duration-200 relative hover:opacity-80 will-change-transform active:opacity-60;
+    @apply cursor-pointer select-none flex items-center justify-center gap-2 font-semibold whitespace-nowrap
+    transition-all duration-200 relative hover:opacity-70 will-change-transform active:opacity-60;
     &.filled {
       &.neutral {
         @apply bg-stone-950 text-stone-50;
@@ -25,7 +26,10 @@
     }
     &.bezeled {
       &.neutral {
-        @apply bg-stone-200 text-stone-700;
+        @apply bg-stone-200 text-stone-500;
+      }
+      &.primary {
+        @apply bg-green-500/20 text-green-500;
       }
     }
     &.border {
@@ -47,10 +51,13 @@
     &.md {
       @apply px-4 h-11 text-base;
     }
+    &:disabled {
+      @apply opacity-50 cursor-not-allowed;
+    }
   }
   /* 로그입/회원가입 페이지 인풋 */
   .authInput {
     @apply w-full bg-stone-100 border border-stone-300 focus:outline-none focus:border-stone-800
-placeholder:text-xs placeholder:text-stone-500 rounded-xl px-4 h-[45px];
+placeholder:text-xs placeholder:text-stone-500 rounded-xl px-4 h-[45px] will-change-transform;
   }
 }

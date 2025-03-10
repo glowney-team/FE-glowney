@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="container @container flex flex-col m-auto relative ">
+    <div className="max-w-7xl @container flex flex-col m-auto relative ">
       <Header />
-      <main className="h-[calc(100dvh-60px)] px-container  bg-stone-50">{children}</main>
+      <main className="h-[calc(100dvh-60px)]   bg-stone-50">{children}</main>
     </div>
   );
 }
