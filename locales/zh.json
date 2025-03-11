@@ -1,0 +1,9 @@
+{
+  "common": {
+    "login": "login"
+  },
+  "HomePage": {
+    "title": "123",
+    "about": "Go to the about page"
+  }
+}

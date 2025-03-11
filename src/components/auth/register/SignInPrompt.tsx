@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 
 // ✅ 로그인 유도 메시지
 const SignInPrompt: React.FC = () => (

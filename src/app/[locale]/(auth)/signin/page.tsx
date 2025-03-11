@@ -1,7 +1,7 @@
 import LoginForm from '@/components/auth/LoginForm';
 import OAuthButtons from '@/components/auth/OAuthButtons';
 import Divider from '@/components/common/Divider';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import * as motion from 'motion/react-client';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
 
