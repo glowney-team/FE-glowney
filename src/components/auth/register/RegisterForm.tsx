@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Button from '@/components/common/Button';
+import Button from '@/components/ui/Button';
 import * as motion from 'motion/react-client';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { AnimatePresence } from 'motion/react';

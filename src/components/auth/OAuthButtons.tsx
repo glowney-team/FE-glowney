@@ -1,4 +1,4 @@
-import Button from '@/components/common/Button';
+import Button from '@/components/ui/Button';
 import GoogleIcon from '../../../public/googleLogo.svg';
 import AppleIcon from '../../../public/appleLogo.svg';
 
