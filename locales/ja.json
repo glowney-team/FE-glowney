@@ -1,10 +1,51 @@
 {
-  "common": {
-    "login": "login"
+  "Common": {
+    "signin": "ログイン"
   },
   "HomePage": {
-    "login": "login",
-    "title": "Hello world!!",
-    "about": "Go to the about page"
+    "login": "ログイン",
+    "title": "こんにちは!!",
+    "about": "紹介ページへ移動"
+  },
+  "Auth": {
+    "Common": {
+      "signin": "ログイン",
+      "register": "新規登録",
+      "email": "メールアドレス",
+      "password": "パスワード",
+      "confirmPassword": "パスワード確認",
+      "passwordRequirement": "数字、英字、特殊文字を含む9〜20文字を入力してください。",
+      "next": "次へ",
+      "signUpComplete": "完了"
+    },
+    "SignInPage": {
+      "AnimatedHeading": {
+        "firstLine": "美しくなる旅",
+        "secondLine": "Glowneyと一緒に"
+      },
+      "RegisterPrompt": "まだアカウントをお持ちではありませんか？",
+      "OAuthButtons": {
+        "google": "Googleで始める",
+        "apple": "Appleで始める"
+      }
+    },
+    "RegisterPage": {
+      "StepOne": {
+        "title": "登録するには、利用規約に同意してください。",
+        "agreeTerms": "利用規約に同意します"
+      },
+      "StepTwo": {
+        "title": "登録のための情報を入力してください。",
+        "confirmPassword": "パスワード確認",
+        "passwordRequirement": "数字、英字、特殊文字を含む9〜20文字を入力してください。"
+      },
+      "StepThree": {
+        "emailVerificationPrompt": "メールで送信された認証コードを入力してください。"
+      },
+      "SignInPrompt": {
+        "message": "すでに会員ですか？",
+        "login": "ログイン"
+      }
+    }
   }
 }

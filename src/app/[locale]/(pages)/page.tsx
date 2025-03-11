@@ -10,7 +10,7 @@ export default function Home() {
         href={`/signin`}
         className="w-fit h-fit bg-stone-950 text-stone-50 px-4 py-2 rounded-full"
       >
-        {t('login')}
+        {t('signin')}
       </Link>
     </main>
   );

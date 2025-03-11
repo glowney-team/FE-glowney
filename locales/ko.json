@@ -1,10 +1,51 @@
 {
   "Common": {
-    "login": "로그인"
+    "signin": "로그인"
   },
   "HomePage": {
-    "login": "login",
-    "title": "Hello world!!",
-    "about": "Go to the about page"
+    "login": "로그인",
+    "title": "안녕하세요!!",
+    "about": "소개 페이지로 이동"
+  },
+  "Auth": {
+    "Common": {
+      "signin": "로그인",
+      "register": "회원가입",
+      "email": "이메일",
+      "password": "비밀번호",
+      "confirmPassword": "비밀번호 확인",
+      "passwordRequirement": "숫자, 영문자, 특수문자를 포함하여 9-20자로 입력해주세요.",
+      "next": "다음",
+      "signUpComplete": "완료"
+    },
+    "SignInPage": {
+      "AnimatedHeading": {
+        "firstLine": "예뻐지는 여정",
+        "secondLine": "Glowney와 함께하세요."
+      },
+      "RegisterPrompt": "아직 회원이 아니신가요?",
+      "OAuthButtons": {
+        "google": "Google로 시작하기",
+        "apple": "Apple로 시작하기"
+      }
+    },
+    "RegisterPage": {
+      "StepOne": {
+        "title": "회원가입을 위해 약관에 동의해주세요.",
+        "agreeTerms": "이용 약관에 동의합니다."
+      },
+      "StepTwo": {
+        "title": "회원가입을 위해 정보를 입력해주세요.",
+        "confirmPassword": "비밀번호 확인",
+        "passwordRequirement": "숫자, 영문자, 특수문자를 포함하여 9-20자로 입력해주세요."
+      },
+      "StepThree": {
+        "emailVerificationPrompt": "이메일로 전송된 인증번호를 입력해주세요."
+      },
+      "SignInPrompt": {
+        "message": "이미 회원이신가요?",
+        "login": "로그인"
+      }
+    }
   }
 }
