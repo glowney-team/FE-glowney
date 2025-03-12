@@ -42,7 +42,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
             {/* ✅ Label을 첫 번째 항목으로 추가 (선택 불가) */}
             {label && (
               <li
-                className="m-1 px-2 py-1 text-sm font-bold text-stone-500 uppercase pointer-events-none"
+                className="m-1 px-2 py-1 text-xs font-bold text-stone-500 uppercase pointer-events-none"
                 aria-hidden="true"
               >
                 {label}
