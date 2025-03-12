@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@reference "./globals.css";
 
 @layer components {
   /* 앱 로고 */
