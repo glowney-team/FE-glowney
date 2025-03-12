@@ -20,7 +20,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
       {/* ✅ 선택 박스 */}
       <button
         type="button"
-        className="flex w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm shadow-xs hover:bg-neutral-50 focus:ring-1 focus:ring-primary"
+        className="focus:ring-primary flex w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm shadow-xs hover:bg-neutral-50 focus:ring-1"
         onClick={() => setIsOpen(!isOpen)}
       >
         {options.find((option) => option.value === value)?.label || 'Select'}
@@ -37,12 +37,12 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute left-0 top-full z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-lg"
+            className="absolute top-full left-0 z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-lg"
           >
             {/* ✅ Label을 첫 번째 항목으로 추가 (선택 불가) */}
             {label && (
               <li
-                className="m-1 px-2 py-1 text-xs font-bold text-neutral-500 uppercase pointer-events-none"
+                className="pointer-events-none m-1 px-2 py-1 text-xs font-bold text-neutral-500 uppercase"
                 aria-hidden="true"
               >
                 {label}
@@ -53,9 +53,9 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
             {options.map((option) => (
               <li
                 key={option.value}
-                className={`cursor-pointer select-none m-1 px-2 py-1 text-sm flex justify-between items-center rounded-lg ${
+                className={`m-1 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-sm select-none ${
                   value === option.value
-                    ? 'bg-primary-100 text-primary-500 font-semibold'
+                    ? 'bg-primary-100 font-semibold text-primary-500'
                     : 'hover:bg-neutral-100'
                 }`}
                 onClick={() => {

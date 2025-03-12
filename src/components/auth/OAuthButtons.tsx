@@ -12,16 +12,16 @@ export const OAuthButtons: React.FC = () => {
         style="custom"
         size="md"
         width="full"
-        className="bg-stone-950 text-stone-50 text-base font-semibold "
+        className="bg-stone-950 text-base font-semibold text-stone-50"
       >
-        <AppleIcon className="size-5 " />
+        <AppleIcon className="size-5" />
         {t('appleSignIn')}{' '}
       </Button>
       <Button
         style="custom"
         size="md"
         width="full"
-        className="bg-white text-stone-950 text-base border border-stone-950 font-semibold"
+        className="border border-stone-950 bg-white text-base font-semibold text-stone-950"
       >
         <GoogleIcon className="size-5" />
         {t('googleSignIn')}{' '}

@@ -1,61 +1,61 @@
-name: "✨ 기본 PR 템플릿"
-description: "Pull Request를 생성할 때 기본적으로 사용되는 템플릿입니다."
-title: "[PR] "
-labels: 
-  - "PR"
-  - "needs review"
+name: '✨ 기본 PR 템플릿'
+description: 'Pull Request를 생성할 때 기본적으로 사용되는 템플릿입니다.'
+title: '[PR] '
+labels:
+  - 'PR'
+  - 'needs review'
 assignees: []
 body:
   - type: markdown
     attributes:
       value: "## 🚀 PR 개요\n이 PR에서 해결하는 내용을 간략히 설명해주세요."
-  
+
   - type: checkboxes
     id: changes
     attributes:
-      label: "변경 사항 유형"
-      description: "PR의 변경 사항 유형을 선택하세요."
+      label: '변경 사항 유형'
+      description: 'PR의 변경 사항 유형을 선택하세요.'
       options:
-        - label: "🐞 버그 수정"
-        - label: "✨ 새로운 기능 추가"
-        - label: "🛠 코드 개선"
-        - label: "📝 문서 업데이트"
-  
+        - label: '🐞 버그 수정'
+        - label: '✨ 새로운 기능 추가'
+        - label: '🛠 코드 개선'
+        - label: '📝 문서 업데이트'
+
   - type: textarea
     id: issue-link
     attributes:
-      label: "✅ 관련 이슈"
-      description: "관련된 이슈 번호를 입력해주세요."
-      placeholder: "#이슈번호 또는 관련 내용"
+      label: '✅ 관련 이슈'
+      description: '관련된 이슈 번호를 입력해주세요.'
+      placeholder: '#이슈번호 또는 관련 내용'
 
   - type: textarea
     id: changes-summary
     attributes:
-      label: "📌 변경 사항 요약"
-      description: "어떤 변경이 이루어졌는지 간략히 설명해주세요."
-      placeholder: "변경된 주요 내용을 정리해주세요."
+      label: '📌 변경 사항 요약'
+      description: '어떤 변경이 이루어졌는지 간략히 설명해주세요.'
+      placeholder: '변경된 주요 내용을 정리해주세요.'
 
   - type: textarea
     id: screenshots
     attributes:
-      label: "📸 스크린샷 (선택 사항)"
-      description: "UI 변경이 있는 경우 스크린샷을 첨부해주세요."
-      placeholder: "스크린샷을 추가해주세요."
+      label: '📸 스크린샷 (선택 사항)'
+      description: 'UI 변경이 있는 경우 스크린샷을 첨부해주세요.'
+      placeholder: '스크린샷을 추가해주세요.'
 
   - type: checkboxes
     id: checklist
     attributes:
-      label: "📝 체크리스트"
-      description: "PR을 제출하기 전에 확인해야 할 사항"
+      label: '📝 체크리스트'
+      description: 'PR을 제출하기 전에 확인해야 할 사항'
       options:
-        - label: "코드 스타일 가이드 준수 (`eslint`, `prettier`)"
-        - label: "관련 문서 업데이트 여부"
-        - label: "기능이 정상적으로 동작하는지 테스트 완료"
-        - label: "리뷰어가 이해하기 쉽게 변경 사항 설명"
+        - label: '코드 스타일 가이드 준수 (`eslint`, `prettier`)'
+        - label: '관련 문서 업데이트 여부'
+        - label: '기능이 정상적으로 동작하는지 테스트 완료'
+        - label: '리뷰어가 이해하기 쉽게 변경 사항 설명'
 
   - type: textarea
     id: other-notes
     attributes:
-      label: "📢 기타 참고 사항"
-      description: "추가적으로 리뷰어가 참고해야 할 사항이 있다면 입력해주세요."
-      placeholder: "예: API 변경 사항, 추가 설명 등이 필요할 경우 입력하세요."
+      label: '📢 기타 참고 사항'
+      description: '추가적으로 리뷰어가 참고해야 할 사항이 있다면 입력해주세요.'
+      placeholder: '예: API 변경 사항, 추가 설명 등이 필요할 경우 입력하세요.'

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 export const RegisterPage = () => {
   return (
     <motion.div
-      className="h-full flex flex-col items-center gap-5 justify-center px-container"
+      className="flex h-full flex-col items-center justify-center gap-5 px-container"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <div className="h-full @lg:max-h-[550px] w-full max-w-sm flex flex-col gap-3 relative">
+      <div className="relative flex h-full w-full max-w-sm flex-col gap-3 @lg:max-h-[550px]">
         <RegisterForm />
       </div>
     </motion.div>

@@ -11,7 +11,7 @@ const AnimatedHeading: React.FC = () => {
 
   return (
     <motion.div
-      className="text-center font-semibold text-xl @lg:text-2xl py-4"
+      className="py-4 text-center text-xl font-semibold @lg:text-2xl"
       initial="hidden"
       animate="visible"
     >
@@ -59,7 +59,7 @@ const AnimatedHeading: React.FC = () => {
         {splitText(t('animatedHeadingSecondLine')).map((char, index) => (
           <motion.span
             key={index}
-            className="inline-block font-bold text-primary"
+            className="text-primary inline-block font-bold"
             variants={{
               hidden: { opacity: 0, x: 5, scale: 0.5 },
               visible: { opacity: 1, x: 0, scale: 1 },
