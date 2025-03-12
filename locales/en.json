@@ -1,52 +1,32 @@
 {
   "Common": {
-    "signin": "Signin"
+    "signin": "Log in",
+    "register": "Sign up",
+    "email": "Email address",
+    "password": "Password",
+    "confirmPassword": "Confirm your password",
+    "passwordRequirement": "Use 9-20 characters with a mix of letters, numbers & symbols.",
+    "next": "Next step",
+    "signUpComplete": "You're all set!",
+    "registerPrompt": "Don't have an account yet?",
+    "signInPromptMessage": "Already have an account?",
+    "signInPromptLogin": "Log in here",
+    "googleSignIn": "Continue with Google",
+    "appleSignIn": "Sign in with Apple"
   },
   "HomePage": {
-    "login": "login",
-    "title": "Hello world!!",
-    "about": "Go to the about page"
+    "login": "Log in",
+    "title": "Welcome to Glowney!",
+    "about": "Learn more about us"
   },
-  "Auth": {
-    "Common": {
-      "signin": "Signin",
-      "register": "Register",
-      "email": "Email",
-      "password": "Password",
-      "confirmPassword": "Confirm Password",
-      "passwordRequirement": "Enter 9-20 characters including numbers, letters, and special characters.",
-      "next": "Next",
-      "signUpComplete": "Complete"
-    },
-    "SignInPage": {
-      "AnimatedHeading": {
-        "firstLine": "Beautiful Journey",
-        "secondLine": "Join us at Glowney."
-      },
-      "RegisterPrompt": "Not a member?",
-      "OAuthButtons": {
-        "google": "Sign in with Google",
-        "apple": "Sign in with apple"
-      }
-    },
-    "RegisterPage": {
-      "StepOne": {
-        "title": "Please agree to the terms to sign up.",
-        "agreeTerms": "I agree to the terms and conditions."
-      },
-      "StepTwo": {
-        "title": "Please enter your details to sign up.",
-
-        "confirmPassword": "Confirm Password",
-        "passwordRequirement": "Enter 9-20 characters including numbers, letters, and special characters."
-      },
-      "StepThree": {
-        "emailVerificationPrompt": "Please enter the verification code sent to your email."
-      },
-      "SignInPrompt": {
-        "message": "Already a member?",
-        "login": "Sign in"
-      }
-    }
+  "SignInPage": {
+    "animatedHeadingFirstLine": "Your beauty journey starts here",
+    "animatedHeadingSecondLine": "Let Glowney guide you!"
+  },
+  "RegisterPage": {
+    "agreeTermsTitle": "Before signing up, please agree to our terms.",
+    "agreeTermsLabel": "I accept the Terms of Service.",
+    "inputInfoTitle": "Tell us a little about yourself.",
+    "emailVerificationPrompt": "Enter the verification code we sent to your email."
   }
 }

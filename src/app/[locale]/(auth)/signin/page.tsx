@@ -26,13 +26,13 @@ export const SignInPage = () => {
 };
 
 const RegisterPrompt: React.FC = () => {
-  const t = useTranslations('Auth');
+  const t = useTranslations('Common');
 
   return (
     <div className="py-6 text-center text-sm ">
-      {t('SignInPage.RegisterPrompt')}{' '}
+      {t('registerPrompt')}{' '}
       <Link href="/register" className="font-bold text-green-500">
-        {t('Common.register')}
+        {t('register')}
       </Link>
     </div>
   );

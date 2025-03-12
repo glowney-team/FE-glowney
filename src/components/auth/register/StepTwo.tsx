@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 
 const StepTwo: React.FC = () => {
-  const t = useTranslations('Auth.Common');
+  const t = useTranslations('Common');
 
   return (
     <>

@@ -12,7 +12,7 @@ import SignInPrompt from './SignInPrompt';
 import { useTranslations } from 'next-intl';
 
 const RegisterForm: React.FC = () => {
-  const t = useTranslations('Auth.Common');
+  const t = useTranslations('Common');
   const [step, setStep] = useState(1); // ✅ 현재 단계 (1~3)
 
   // ✅ 다음 단계로 이동
@@ -79,7 +79,7 @@ const RegisterForm: React.FC = () => {
 
 // ✅ 현재 단계 표시
 const RegisterStep: React.FC<{ step: number; total: number }> = ({ step, total }) => {
-  const t = useTranslations('Auth.Common');
+  const t = useTranslations('Common');
 
   return (
     <h2 className="font-semibold text-3xl @lg:text-3xl py-5 flex items-center">

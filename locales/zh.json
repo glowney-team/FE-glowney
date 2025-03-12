@@ -1,52 +1,32 @@
 {
   "Common": {
-    "signin": "登录"
+    "signin": "登录",
+    "register": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "passwordRequirement": "请输入9-20个字符，包含字母、数字和特殊符号。",
+    "next": "下一步",
+    "signUpComplete": "注册成功！",
+    "registerPrompt": "还没有账户？立即注册！",
+    "signInPromptMessage": "已经有账户了？",
+    "signInPromptLogin": "点击登录",
+    "googleSignIn": "使用 Google 登录",
+    "appleSignIn": "使用 Apple 登录"
   },
   "HomePage": {
-    "login": "登录",
-    "title": "你好!!",
-    "about": "前往介绍页面"
+    "login": "立即登录",
+    "title": "欢迎来到 Glowney！",
+    "about": "了解更多关于我们"
   },
-  "Auth": {
-    "Common": {
-      "signin": "登录",
-      "register": "注册",
-      "email": "电子邮件",
-      "password": "密码",
-      "confirmPassword": "确认密码",
-      "passwordRequirement": "请输入9-20个字符，包括数字、字母和特殊字符。",
-      "next": "下一步",
-      "signUpComplete": "完成"
-    },
-    "SignInPage": {
-      "AnimatedHeading": {
-        "firstLine": "变美的旅程",
-        "secondLine": "与Glowney一起"
-      },
-      "RegisterPrompt": "还没有账户？",
-      "OAuthButtons": {
-        "google": "使用 Google 开始",
-        "apple": "使用 Apple 开始"
-      }
-    },
-    "RegisterPage": {
-      "StepOne": {
-        "title": "请同意条款以注册。",
-        "agreeTerms": "我同意使用条款"
-      },
-      "StepTwo": {
-        "title": "请输入您的信息以完成注册。",
-        "confirmPassword": "确认密码",
-        "passwordRequirement": "请输入9-20个字符，包括数字、字母和特殊字符。"
-      },
-      "StepThree": {
-        "emailVerificationPrompt": "请输入发送到您邮箱的验证码。"
-      },
-
-      "SignInPrompt": {
-        "message": "已经是会员？",
-        "login": "登录"
-      }
-    }
+  "SignInPage": {
+    "animatedHeadingFirstLine": "开启您的美丽旅程",
+    "animatedHeadingSecondLine": "Glowney 带你发现更美的自己！"
+  },
+  "RegisterPage": {
+    "agreeTermsTitle": "注册前请阅读并同意我们的条款。",
+    "agreeTermsLabel": "我已阅读并同意服务条款。",
+    "inputInfoTitle": "请填写您的基本信息。",
+    "emailVerificationPrompt": "请输入发送到您邮箱的验证码。"
   }
 }

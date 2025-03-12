@@ -4,14 +4,14 @@ import { useTranslations } from 'next-intl';
 import * as motion from 'motion/react-client';
 
 const AnimatedHeading: React.FC = () => {
-  const t = useTranslations('Auth.SignInPage.AnimatedHeading');
+  const t = useTranslations('SignInPage');
 
   // ✅ 문자열을 글자 단위로 나누는 함수
   const splitText = (text: string) => text.split('');
 
   return (
     <motion.div
-      className="text-center font-semibold text-3xl @lg:text-3xl py-4"
+      className="text-center font-semibold text-xl @lg:text-2xl py-4"
       initial="hidden"
       animate="visible"
     >
@@ -25,7 +25,7 @@ const AnimatedHeading: React.FC = () => {
           },
         }}
       >
-        {splitText(t('firstLine')).map((char, index) => (
+        {splitText(t('animatedHeadingFirstLine')).map((char, index) => (
           <motion.span
             key={index}
             className="inline-block"
@@ -51,12 +51,12 @@ const AnimatedHeading: React.FC = () => {
             opacity: 1,
             transition: {
               staggerChildren: 0.08,
-              delayChildren: splitText(t('firstLine')).length * 0.08 + 0.5, // ✅ 첫 번째 문장이 끝난 후 실행
+              delayChildren: splitText(t('animatedHeadingFirstLine')).length * 0.08 + 0.5, // ✅ 첫 번째 문장이 끝난 후 실행
             },
           },
         }}
       >
-        {splitText(t('secondLine')).map((char, index) => (
+        {splitText(t('animatedHeadingSecondLine')).map((char, index) => (
           <motion.span
             key={index}
             className="inline-block font-bold text-primary"

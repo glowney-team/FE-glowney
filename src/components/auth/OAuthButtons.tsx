@@ -4,7 +4,7 @@ import AppleIcon from '../../../public/appleLogo.svg';
 import { useTranslations } from 'next-intl';
 
 export const OAuthButtons: React.FC = () => {
-  const t = useTranslations('Auth.SignInPage');
+  const t = useTranslations('Common');
 
   return (
     <>
@@ -15,7 +15,7 @@ export const OAuthButtons: React.FC = () => {
         className="bg-stone-950 text-stone-50 text-base font-semibold "
       >
         <AppleIcon className="size-5 " />
-        {t('OAuthButtons.apple')}{' '}
+        {t('appleSignIn')}{' '}
       </Button>
       <Button
         style="custom"
@@ -24,7 +24,7 @@ export const OAuthButtons: React.FC = () => {
         className="bg-white text-stone-950 text-base border border-stone-950 font-semibold"
       >
         <GoogleIcon className="size-5" />
-        {t('OAuthButtons.google')}{' '}
+        {t('googleSignIn')}{' '}
       </Button>
     </>
   );

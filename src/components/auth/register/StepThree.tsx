@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 
 const StepThree: React.FC = () => {
   const inputRefs = useRef<Array<HTMLInputElement | null>>(Array(6).fill(null));
-  const t = useTranslations('Auth.RegisterPage.StepThree');
+  const t = useTranslations('RegisterPage');
 
   const handleChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
     if (!/^[0-9]*$/.test(e.target.value)) {

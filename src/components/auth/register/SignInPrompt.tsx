@@ -3,12 +3,12 @@ import { useTranslations } from 'next-intl';
 
 // ✅ 로그인 유도 메시지
 const SignInPrompt: React.FC = () => {
-  const t = useTranslations('Auth.RegisterPage');
+  const t = useTranslations('Common');
   return (
     <div className="p-6 text-center text-sm ">
-      {t('SignInPrompt.message')}{' '}
+      {t('signInPromptMessage')}{' '}
       <Link href="/signin" className="font-bold text-green-500 ">
-        {t('SignInPrompt.login')}
+        {t('signin')}
       </Link>
     </div>
   );
