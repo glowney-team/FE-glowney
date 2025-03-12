@@ -1,0 +1,32 @@
+{
+  "Common": {
+    "signin": "登录",
+    "register": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "passwordRequirement": "请输入9-20个字符，包含字母、数字和特殊符号。",
+    "next": "下一步",
+    "signUpComplete": "注册成功！",
+    "registerPrompt": "还没有账户？立即注册！",
+    "signInPromptMessage": "已经有账户了？",
+    "signInPromptLogin": "点击登录",
+    "googleSignIn": "使用 Google 登录",
+    "appleSignIn": "使用 Apple 登录"
+  },
+  "HomePage": {
+    "login": "立即登录",
+    "title": "欢迎来到 Glowney！",
+    "about": "了解更多关于我们"
+  },
+  "SignInPage": {
+    "animatedHeadingFirstLine": "开启您的美丽旅程",
+    "animatedHeadingSecondLine": "Glowney 带你发现更美的自己！"
+  },
+  "RegisterPage": {
+    "agreeTermsTitle": "注册前请阅读并同意我们的条款。",
+    "agreeTermsLabel": "我已阅读并同意服务条款。",
+    "inputInfoTitle": "请填写您的基本信息。",
+    "emailVerificationPrompt": "请输入发送到您邮箱的验证码。"
+  }
+}

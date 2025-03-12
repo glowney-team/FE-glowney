@@ -1,19 +1,20 @@
-import Button from '@/components/common/Button';
+import Button from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 const LoginForm: React.FC = () => {
+  const t = useTranslations('Common');
+
   return (
     <form className="flex flex-col gap-3">
       <div>
-        <input type="email" id="email" placeholder="이메일" className="authInput" />
+        <input type="email" id="email" placeholder={t('email')} className="authInput" />
       </div>
       <div>
-        <input type="password" id="password" placeholder="비밀번호" className="authInput" />
+        <input type="password" id="password" placeholder={t('password')} className="authInput" />
       </div>
-      <span className="text-xs @lg:text-sm text-stone-500">
-        숫자, 영문자, 특수문자 포함 9 - 20자로 입력해주세요.
-      </span>
+      <span className="text-xs @lg:text-sm text-stone-500">{t('passwordRequirement')}</span>
       <Button type="submit" color="primary" size="md" width="full" className="font-semibold">
-        로그인
+        {t('signin')}
       </Button>
     </form>
   );

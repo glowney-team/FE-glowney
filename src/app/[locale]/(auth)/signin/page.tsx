@@ -1,9 +1,10 @@
 import LoginForm from '@/components/auth/LoginForm';
 import OAuthButtons from '@/components/auth/OAuthButtons';
 import Divider from '@/components/common/Divider';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import * as motion from 'motion/react-client';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
+import { useTranslations } from 'next-intl';
 
 export const SignInPage = () => {
   return (
@@ -25,11 +26,13 @@ export const SignInPage = () => {
 };
 
 const RegisterPrompt: React.FC = () => {
+  const t = useTranslations('Common');
+
   return (
-    <div className="p-6 text-center text-base">
-      아직 회원이 아니신가요?
+    <div className="py-6 text-center text-sm ">
+      {t('registerPrompt')}{' '}
       <Link href="/register" className="font-bold text-green-500">
-        회원가입
+        {t('register')}
       </Link>
     </div>
   );

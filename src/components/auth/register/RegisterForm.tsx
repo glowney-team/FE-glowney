@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Button from '@/components/common/Button';
+import Button from '@/components/ui/Button';
 import * as motion from 'motion/react-client';
 import { ChevronLeftIcon } from '@heroicons/react/24/solid';
 import { AnimatePresence } from 'motion/react';
@@ -9,8 +9,10 @@ import StepOne from './StepOne';
 import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import SignInPrompt from './SignInPrompt';
+import { useTranslations } from 'next-intl';
 
 const RegisterForm: React.FC = () => {
+  const t = useTranslations('Common');
   const [step, setStep] = useState(1); // ✅ 현재 단계 (1~3)
 
   // ✅ 다음 단계로 이동
@@ -66,7 +68,7 @@ const RegisterForm: React.FC = () => {
               width="full"
               onClick={nextStep}
             >
-              {step === 3 ? '회원가입 완료' : '다음'}
+              {step === 3 ? `${t('signUpComplete')}` : `${t('next')}`}
             </Button>
           </motion.div>
         </AnimatePresence>
@@ -77,9 +79,11 @@ const RegisterForm: React.FC = () => {
 
 // ✅ 현재 단계 표시
 const RegisterStep: React.FC<{ step: number; total: number }> = ({ step, total }) => {
+  const t = useTranslations('Common');
+
   return (
     <h2 className="font-semibold text-3xl @lg:text-3xl py-5 flex items-center">
-      회원가입 {step}/{total}
+      {t('register')} {step}/{total}
     </h2>
   );
 };

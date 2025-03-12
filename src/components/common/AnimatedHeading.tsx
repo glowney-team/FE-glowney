@@ -1,28 +1,36 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
 import * as motion from 'motion/react-client';
 
 const AnimatedHeading: React.FC = () => {
+  const t = useTranslations('SignInPage');
+
+  // ✅ 문자열을 글자 단위로 나누는 함수
+  const splitText = (text: string) => text.split('');
+
   return (
     <motion.div
-      className="text-center font-semibold text-3xl @lg:text-3xl py-4"
+      className="text-center font-semibold text-xl @lg:text-2xl py-4"
       initial="hidden"
       animate="visible"
     >
-      {/* ✅ '예뻐지는 여정' 한 글자씩 부드럽게 등장 */}
+      {/* ✅ 첫 번째 문장 애니메이션 */}
       <motion.div
         variants={{
           visible: {
             transition: {
-              staggerChildren: 0.08, // 더 빠르게 등장
+              staggerChildren: 0.08, // ✅ 한 글자씩 등장
             },
           },
         }}
       >
-        {['예', '뻐', '지', '는', ' ', '여', '정'].map((char, index) => (
+        {splitText(t('animatedHeadingFirstLine')).map((char, index) => (
           <motion.span
             key={index}
-            className="inline-block" // ✅ 해결: inline-block 적용
+            className="inline-block"
             variants={{
-              hidden: { opacity: 0, x: 5, scale: 0.5 }, // ✅ 시작 위치 조정
+              hidden: { opacity: 0, x: 5, scale: 0.5 },
               visible: { opacity: 1, x: 0, scale: 1 },
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 12 }}
@@ -32,35 +40,35 @@ const AnimatedHeading: React.FC = () => {
         ))}
       </motion.div>
 
-      {/* ✅ 'Glowney 와 함께하세요.' 한 글자씩 부드럽게 등장 */}
+      {/* ✅ 두 번째 문장: 첫 번째 문장이 끝난 후 시작 */}
       <motion.div
         className="mt-2"
+        initial="hidden"
+        animate="visible"
         variants={{
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
             transition: {
               staggerChildren: 0.08,
-              delayChildren: 0.5, // '예뻐지는 여정'이 끝난 후 시작
+              delayChildren: splitText(t('animatedHeadingFirstLine')).length * 0.08 + 0.5, // ✅ 첫 번째 문장이 끝난 후 실행
             },
           },
         }}
       >
-        {['G', 'l', 'o', 'w', 'n', 'e', 'y', ' ', '와', ' ', '함', '께', '하', '세', '요', '.'].map(
-          (char, index) => (
-            <motion.span
-              key={index}
-              className="inline-block font-bold text-primary" // ✅ 해결: inline-block 적용
-              variants={{
-                hidden: { opacity: 0, x: 5, scale: 0.5 },
-                visible: { opacity: 1, x: 0, scale: 1 },
-              }}
-              transition={{ type: 'spring', stiffness: 100, damping: 12 }}
-            >
-              {char === ' ' ? <span>&nbsp;</span> : char}
-            </motion.span>
-          )
-        )}
+        {splitText(t('animatedHeadingSecondLine')).map((char, index) => (
+          <motion.span
+            key={index}
+            className="inline-block font-bold text-primary"
+            variants={{
+              hidden: { opacity: 0, x: 5, scale: 0.5 },
+              visible: { opacity: 1, x: 0, scale: 1 },
+            }}
+            transition={{ type: 'spring', stiffness: 100, damping: 12 }}
+          >
+            {char === ' ' ? <span>&nbsp;</span> : char}
+          </motion.span>
+        ))}
       </motion.div>
     </motion.div>
   );

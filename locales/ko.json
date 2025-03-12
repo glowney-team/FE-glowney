@@ -1,0 +1,31 @@
+{
+  "Common": {
+    "signin": "로그인",
+    "register": "회원가입",
+    "email": "이메일",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "passwordRequirement": "숫자, 영문자, 특수문자를 포함하여 9-20자로 입력해주세요.",
+    "next": "다음",
+    "signUpComplete": "완료",
+    "registerPrompt": "아직 회원이 아니신가요?",
+    "signInPromptMessage": "이미 회원이신가요?",
+    "signInPromptLogin": "로그인",
+    "googleSignIn": "Google로 시작하기",
+    "appleSignIn": "Apple로 시작하기"
+  },
+  "HomePage": {
+    "title": "안녕하세요!!",
+    "about": "소개 페이지로 이동"
+  },
+  "SignInPage": {
+    "animatedHeadingFirstLine": "예뻐지는 여정",
+    "animatedHeadingSecondLine": "Glowney와 함께하세요."
+  },
+  "RegisterPage": {
+    "agreeTermsTitle": "회원가입을 위해 약관에 동의해주세요.",
+    "agreeTermsLabel": "이용 약관에 동의합니다.",
+    "inputInfoTitle": "회원가입을 위해 정보를 입력해주세요.",
+    "emailVerificationPrompt": "이메일로 전송된 인증번호를 입력해주세요."
+  }
+}

@@ -1,7 +1,9 @@
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const StepThree: React.FC = () => {
   const inputRefs = useRef<Array<HTMLInputElement | null>>(Array(6).fill(null));
+  const t = useTranslations('RegisterPage');
 
   const handleChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
     if (!/^[0-9]*$/.test(e.target.value)) {
@@ -27,7 +29,7 @@ const StepThree: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-sm font-semibold">이메일로 전송된 인증번호를 입력해주세요.</p>
+      <p className="text-sm font-semibold">{t('emailVerificationPrompt')}</p>
       <div className="flex items-center justify-between">
         {Array.from({ length: 6 }).map((_, index) => (
           <input

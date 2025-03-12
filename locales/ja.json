@@ -1,0 +1,32 @@
+{
+  "Common": {
+    "signin": "ログイン",
+    "register": "新規登録",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "confirmPassword": "パスワードを再入力",
+    "passwordRequirement": "英数字と記号を含む9～20文字で入力してください。",
+    "next": "次へ",
+    "signUpComplete": "登録が完了しました！",
+    "registerPrompt": "まだアカウントをお持ちでないですか？",
+    "signInPromptMessage": "すでにアカウントをお持ちですか？",
+    "signInPromptLogin": "ログインはこちら",
+    "googleSignIn": "Googleでログイン",
+    "appleSignIn": "Appleでログイン"
+  },
+  "HomePage": {
+    "login": "ログイン",
+    "title": "Glowneyへようこそ！",
+    "about": "詳しくはこちら"
+  },
+  "SignInPage": {
+    "animatedHeadingFirstLine": "美しさへの第一歩",
+    "animatedHeadingSecondLine": "Glowneyと一緒に理想の自分へ！"
+  },
+  "RegisterPage": {
+    "agreeTermsTitle": "登録前に利用規約に同意してください。",
+    "agreeTermsLabel": "利用規約に同意します。",
+    "inputInfoTitle": "基本情報をご入力ください。",
+    "emailVerificationPrompt": "メールに送信された認証コードを入力してください。"
+  }
+}
