@@ -15,7 +15,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Glowney',
   description: '성형',
   icons: {
     icon: '/glowney.ico',

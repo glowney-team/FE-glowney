@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header
       className="max-w-7xl flex flex-col sticky top-0 z-10
-  justify-center h-[60px] px-container  bg-stone-50"
+  justify-center h-[60px] px-container  bg-neutral-50"
     >
       <div className="flex">
         <AppLogo labelType="symbol" />

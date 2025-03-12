@@ -1,5 +1,11 @@
 import RegisterForm from '@/components/auth/register/RegisterForm';
 import * as motion from 'motion/react-client';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Register - Glowney',
+  description: '성형 플랫폼 로그인 페이지',
+};
 
 export const RegisterPage = () => {
   return (

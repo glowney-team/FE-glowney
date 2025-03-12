@@ -5,6 +5,12 @@ import { Link } from '@/i18n/navigation';
 import * as motion from 'motion/react-client';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Sign In - Glowney',
+  description: '성형 플랫폼 로그인 페이지',
+};
 
 export const SignInPage = () => {
   return (
@@ -31,7 +37,7 @@ const RegisterPrompt: React.FC = () => {
   return (
     <div className="py-6 text-center text-sm ">
       {t('registerPrompt')}{' '}
-      <Link href="/register" className="font-bold text-green-500">
+      <Link href="/register" className="font-bold text-primary-500">
         {t('register')}
       </Link>
     </div>

@@ -20,12 +20,12 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
       {/* ✅ 선택 박스 */}
       <button
         type="button"
-        className="flex w-full items-center justify-between rounded-lg border border-stone-300 bg-stone-50 px-2 py-1 text-sm shadow-xs hover:bg-stone-50 focus:ring-2 focus:ring-primary"
+        className="flex w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm shadow-xs hover:bg-neutral-50 focus:ring-1 focus:ring-primary"
         onClick={() => setIsOpen(!isOpen)}
       >
         {options.find((option) => option.value === value)?.label || 'Select'}
         <ChevronDownIcon
-          className={`h-4 w-4 text-stone-500 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          className={`h-4 w-4 text-neutral-500 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
       </button>
 
@@ -37,12 +37,12 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute left-0 top-full z-50 mt-1 w-full rounded-lg border border-stone-200 bg-white shadow-lg"
+            className="absolute left-0 top-full z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-lg"
           >
             {/* ✅ Label을 첫 번째 항목으로 추가 (선택 불가) */}
             {label && (
               <li
-                className="m-1 px-2 py-1 text-xs font-bold text-stone-500 uppercase pointer-events-none"
+                className="m-1 px-2 py-1 text-xs font-bold text-neutral-500 uppercase pointer-events-none"
                 aria-hidden="true"
               >
                 {label}
@@ -55,8 +55,8 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
                 key={option.value}
                 className={`cursor-pointer select-none m-1 px-2 py-1 text-sm flex justify-between items-center rounded-lg ${
                   value === option.value
-                    ? 'bg-green-100 text-green-500 font-semibold'
-                    : 'hover:bg-stone-100'
+                    ? 'bg-primary-100 text-primary-500 font-semibold'
+                    : 'hover:bg-neutral-100'
                 }`}
                 onClick={() => {
                   onChange(option.value);
@@ -64,7 +64,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
                 }}
               >
                 {option.label}
-                {value === option.value && <CheckIcon className="h-3 w-5 text-green-500" />}
+                {value === option.value && <CheckIcon className="h-3 w-5 text-primary-500" />}
               </li>
             ))}
           </motion.ul>
