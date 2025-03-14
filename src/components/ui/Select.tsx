@@ -55,7 +55,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
                 key={option.value}
                 className={`m-1 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-sm select-none ${
                   value === option.value
-                    ? 'bg-primary-100 font-semibold text-primary-500'
+                    ? 'bg-primary-100 font-semibold text-primary-600'
                     : 'hover:bg-neutral-100'
                 }`}
                 onClick={() => {
@@ -64,7 +64,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
                 }}
               >
                 {option.label}
-                {value === option.value && <CheckIcon className="h-3 w-5 text-primary-500" />}
+                {value === option.value && <CheckIcon className="h-3 w-5 text-primary-600" />}
               </li>
             ))}
           </motion.ul>

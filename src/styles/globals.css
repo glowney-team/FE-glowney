@@ -3,7 +3,6 @@
 @theme {
   --font-sans: var(--font-pretendard);
   --padding-container: 1.5rem;
-
   --color-primary-50: oklch(0.982 0.018 155.826);
   --color-primary-100: oklch(0.962 0.044 156.743);
   --color-primary-200: oklch(0.925 0.084 155.995);
@@ -22,8 +21,8 @@
   --foreground: #171717;
 }
 ::selection {
-  background-color: oklch(0.723 0.219 149.477); /* ✅ 예시: Glowney의 브랜드 색상 */
-  color: white;
+  background-color: var(--color-primary-100); /* ✅ 예시: Glowney의 브랜드 색상 */
+  color: var(--color-primary-600);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,4 +39,8 @@ body {
   background: var(--background);
   font-family: var(--font-pretendard);
   @apply bg-neutral-50;
+}
+
+.max-container {
+  @apply w-full max-w-7xl;
 }

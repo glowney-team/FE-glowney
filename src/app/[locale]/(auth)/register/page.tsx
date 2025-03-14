@@ -1,4 +1,5 @@
 import RegisterForm from '@/components/auth/register/RegisterForm';
+import AuthFormContainer from '@/components/common/AuthFormContainer';
 import * as motion from 'motion/react-client';
 import { Metadata } from 'next';
 
@@ -10,14 +11,14 @@ export const metadata: Metadata = {
 export const RegisterPage = () => {
   return (
     <motion.div
-      className="flex h-full flex-col items-center justify-center gap-5 px-container"
+      className="flex w-full flex-col items-center justify-center gap-5 px-container"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <div className="relative flex h-full w-full max-w-sm flex-col gap-3 @lg:max-h-[550px]">
+      <AuthFormContainer>
         <RegisterForm />
-      </div>
+      </AuthFormContainer>
     </motion.div>
   );
 };

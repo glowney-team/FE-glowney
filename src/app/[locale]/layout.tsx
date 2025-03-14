@@ -39,7 +39,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={pretendard.variable}>
       <NextIntlClientProvider messages={messages}>
-        <body className="antialiased">{children}</body>
+        <body className="min-w-2xs antialiased">{children}</body>
       </NextIntlClientProvider>
     </html>
   );
