@@ -28,13 +28,13 @@ const RegisterForm: React.FC = () => {
   return (
     <>
       <RegisterStep step={step} total={3} />
-      <div className="flex flex-col gap-3 h-full">
+      <div className="flex h-full flex-col gap-3">
         {step === 1 && <StepOne />}
         {step === 2 && <StepTwo />}
         {step === 3 && <StepThree />}
       </div>
       {step === 1 && <SignInPrompt />}
-      <div className="flex  justify-between gap-2 mb-6 mt-auto relative">
+      <div className="relative mt-auto mb-6 flex justify-between gap-2">
         <AnimatePresence>
           {step > 1 && (
             <motion.div
@@ -82,7 +82,7 @@ const RegisterStep: React.FC<{ step: number; total: number }> = ({ step, total }
   const t = useTranslations('Common');
 
   return (
-    <h2 className="font-semibold text-3xl @lg:text-3xl py-5 flex items-center">
+    <h2 className="flex items-center py-5 text-3xl font-semibold @lg:text-3xl">
       {t('register')} {step}/{total}
     </h2>
   );

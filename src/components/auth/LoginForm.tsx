@@ -12,7 +12,7 @@ const LoginForm: React.FC = () => {
       <div>
         <input type="password" id="password" placeholder={t('password')} className="authInput" />
       </div>
-      <span className="text-xs @lg:text-sm text-stone-500">{t('passwordRequirement')}</span>
+      <span className="text-xs text-stone-500 @lg:text-sm">{t('passwordRequirement')}</span>
       <Button type="submit" color="primary" size="md" width="full" className="font-semibold">
         {t('signin')}
       </Button>

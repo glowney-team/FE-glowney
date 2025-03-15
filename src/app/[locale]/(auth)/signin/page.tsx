@@ -5,22 +5,29 @@ import { Link } from '@/i18n/navigation';
 import * as motion from 'motion/react-client';
 import AnimatedHeading from '@/components/common/AnimatedHeading';
 import { useTranslations } from 'next-intl';
+import { Metadata } from 'next';
+import AuthFormContainer from '@/components/common/AuthFormContainer';
+
+export const metadata: Metadata = {
+  title: 'Sign In - Glowney',
+  description: '성형 플랫폼 로그인 페이지',
+};
 
 export const SignInPage = () => {
   return (
     <motion.div
-      className="h-full flex flex-col items-center gap-5 justify-center px-container"
+      className="flex w-full flex-col items-center justify-center gap-5 px-container"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
-      <AnimatedHeading />
-      <div className="w-full max-w-sm flex flex-col gap-3">
+      <AuthFormContainer>
+        <AnimatedHeading />
         <LoginForm />
         <Divider label="or" />
         <OAuthButtons />
         <RegisterPrompt />
-      </div>
+      </AuthFormContainer>
     </motion.div>
   );
 };
@@ -29,9 +36,9 @@ const RegisterPrompt: React.FC = () => {
   const t = useTranslations('Common');
 
   return (
-    <div className="py-6 text-center text-sm ">
+    <div className="py-6 text-center text-sm">
       {t('registerPrompt')}{' '}
-      <Link href="/register" className="font-bold text-green-500">
+      <Link href="/register" className="font-bold text-primary-500">
         {t('register')}
       </Link>
     </div>

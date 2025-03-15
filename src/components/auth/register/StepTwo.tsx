@@ -17,7 +17,7 @@ const StepTwo: React.FC = () => {
         </label>
         <input type="password" id="password" placeholder={t('password')} className="authInput" />
       </div>
-      <span className="text-xs @lg:text-sm text-stone-500 ">{t('passwordRequirement')}</span>
+      <span className="text-xs text-stone-500 @lg:text-sm">{t('passwordRequirement')}</span>
       <div className="flex flex-col gap-1">
         <label htmlFor="password-confirm" className="text-sm font-semibold">
           {t('confirmPassword')}

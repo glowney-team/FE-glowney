@@ -36,7 +36,7 @@ const StepThree: React.FC = () => {
             key={index}
             type="text"
             maxLength={1}
-            className="authInput w-12 text-center text-base font-semibold focus:scale-105 caret-transparent"
+            className="authInput w-12 text-center text-base font-semibold caret-transparent focus:scale-105"
             ref={(el) => {
               inputRefs.current[index] = el;
             }}

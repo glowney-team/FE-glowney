@@ -3,11 +3,8 @@ import LanguageSwitcher from '../common/LanguageSwitcher';
 
 export function Header() {
   return (
-    <header
-      className="max-w-7xl flex flex-col sticky top-0 z-10
-  justify-center h-[60px] px-container  bg-stone-50"
-    >
-      <div className="flex">
+    <header className="sticky top-0 z-10 flex h-[60px] w-full flex-col items-center justify-center bg-neutral-50">
+      <div className="max-container flex px-container">
         <AppLogo labelType="symbol" />
         <LanguageSwitcher />
       </div>

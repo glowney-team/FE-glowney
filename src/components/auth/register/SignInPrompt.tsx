@@ -5,9 +5,9 @@ import { useTranslations } from 'next-intl';
 const SignInPrompt: React.FC = () => {
   const t = useTranslations('Common');
   return (
-    <div className="p-6 text-center text-sm ">
+    <div className="p-6 text-center text-sm">
       {t('signInPromptMessage')}{' '}
-      <Link href="/signin" className="font-bold text-green-500 ">
+      <Link href="/signin" className="font-bold text-green-500">
         {t('signin')}
       </Link>
     </div>
