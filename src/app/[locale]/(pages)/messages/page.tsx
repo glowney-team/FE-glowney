@@ -1,5 +1,5 @@
 import Container from '@/components/ui/Container';
 
-export default function BookingsPage() {
+export default function MessagesPage() {
   return <Container>bookings</Container>;
 }
