@@ -63,15 +63,15 @@ const Carousel: React.FC<CarouselProps> = ({
               alt={`Slide ${index + 1}`}
               className="h-full w-full rounded-xl object-cover"
             />
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-black/60 to-transparent"></div>
-            <div className="absolute top-1/2 left-6 -translate-y-1/2 text-white">
+            <div className="absolute inset-0 rounded-xl bg-linear-to-r/oklch from-black to-transparent to-50%"></div>
+            <div className="absolute top-1/2 left-8 -translate-y-1/2 text-white">
               <h3 className="text-xl font-semibold">{slide.title}</h3>
               <p className="text-base text-neutral-50/50">{slide.text}</p>
             </div>
           </div>
         ))}
       </div>
-      <div className="absolute right-6 bottom-4 w-fit rounded-full bg-neutral-900/40 px-2 text-sm text-neutral-300">
+      <div className="absolute right-4 bottom-3 w-fit rounded-full bg-neutral-900/40 px-2 text-sm text-neutral-300">
         {selectedIndex + 1} / {slides.length}
       </div>
     </div>
