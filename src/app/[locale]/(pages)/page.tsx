@@ -1,3 +1,4 @@
+import HomeCarousel from '@/components/common/HomeCarousel';
 import Container from '@/components/ui/Container';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
@@ -7,10 +8,10 @@ export default function Home() {
 
   return (
     <Container>
+      <HomeCarousel />
       <Link href={`/signin`} className="button filled primary sm w-fit rounded-lg">
         {t('signin')}
       </Link>
-      <div className="h-[3000px] w-full bg-neutral-50">text</div>
     </Container>
   );
 }
