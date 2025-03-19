@@ -2,7 +2,7 @@
 
 @theme {
   --font-sans: var(--font-pretendard);
-  --padding-container: 1.5rem;
+  --padding-container: 1.2rem;
   --color-primary-50: oklch(0.982 0.018 155.826);
   --color-primary-100: oklch(0.962 0.044 156.743);
   --color-primary-200: oklch(0.925 0.084 155.995);

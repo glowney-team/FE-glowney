@@ -1,17 +1,19 @@
-import HomeCarousel from '@/components/common/HomeCarousel';
+'use client';
+import MainCarousel from '@/components/home/MainCarousel';
+import HotDealsSection from '@/components/home/HotDealsSection';
 import Container from '@/components/ui/Container';
-import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
 
 export default function Home() {
-  const t = useTranslations('Common');
-
   return (
-    <Container>
-      <HomeCarousel />
-      <Link href={`/signin`} className="button filled primary sm w-fit rounded-lg">
-        {t('signin')}
-      </Link>
-    </Container>
+    <>
+      <div className="flex w-full items-center justify-center py-container">
+        <Container>
+          <MainCarousel />
+        </Container>
+      </div>
+      <div className="mt-2 flex w-full flex-col items-center justify-center gap-2">
+        <HotDealsSection />
+      </div>
+    </>
   );
 }
