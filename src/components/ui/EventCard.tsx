@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { StarIcon } from '@heroicons/react/24/solid';
+import { Card, CardContent, CardDescription, CardImage } from '../ui/Card';
+import Link from 'next/link';
+import Rating from '@/components/ui/Rating';
+import WishlistButton from '@/components/ui/WishlistButton';
 
 interface EventCardProps {
   image: string;
@@ -11,6 +13,7 @@ interface EventCardProps {
   rating: number;
   originalPrice: number;
   discountedPrice: number;
+  link: string;
 }
 
 const EventCard: React.FC<EventCardProps> = ({
@@ -20,40 +23,41 @@ const EventCard: React.FC<EventCardProps> = ({
   rating,
   originalPrice,
   discountedPrice,
+  link,
 }) => {
   const discountPercentage = Math.round(((originalPrice - discountedPrice) / originalPrice) * 100);
 
   return (
-    <div className="relative w-full max-w-[200px] overflow-hidden rounded-2xl border border-neutral-300 @lg:max-w-[300px]">
-      {/* 이미지 */}
-      <div className="relative h-[200px] w-full @lg:h-[300px]">
-        <Image src={image} alt={eventName} layout="fill" objectFit="cover" />
-      </div>
-      {/* 내용 */}
-      <div className="w-full bg-neutral-50/50 px-3 py-3 backdrop-blur-2xl">
-        <h3 className="text-base font-semibold text-neutral-900 @lg:text-xl">{eventName}</h3>
-        <div className="flex gap-2">
-          {/* 평점 */}
-          <div className="flex items-center gap-1 text-yellow-500">
-            <StarIcon fill="currentColor" className="size-4" />
-            <span className="text-sm font-medium @lg:text-base">{rating.toFixed(1)}</span>
-          </div>
-          {/* 병원명 */}
-          <p className="text-sm font-light text-neutral-500 @lg:text-base">{hospitalName}</p>
-        </div>
-        {/* 가격 정보 */}
-        <div className="mt-1 flex items-center gap-1">
-          <div>
-            <p className="text-base font-bold text-neutral-900 @lg:text-xl">
-              ₩{discountedPrice.toLocaleString()}
-            </p>
-          </div>
-          <span className="text-bas font-bold text-primary-600 @lg:text-lg">
-            {discountPercentage}%
-          </span>
-        </div>
-      </div>
-    </div>
+    <Card className="relative rounded-2xl border-none shadow-none">
+      <Link href={link}>
+        {/* 이미지 */}
+        <CardImage
+          src={image}
+          alt="Event image"
+          aspectRatio="square"
+          className="overflow-hidden rounded-xl"
+        />
+        {/* 내용 */}
+        <CardContent className="flex flex-col gap-1 px-1 py-4">
+          <CardDescription className="flex flex-col">
+            <div className="flex items-center justify-between gap-1 text-xs text-neutral-900/50">
+              {/* 평점 */}
+              <span>{hospitalName}</span>
+              <Rating rating={rating} />
+            </div>
+            <div className="mt-2 text-sm font-semibold">{eventName}</div>
+            {/* 가격 정보 */}
+            <div className="flex items-center gap-1 text-base font-semibold">
+              <div>
+                <p className="text-neutral-900">₩{discountedPrice.toLocaleString()}</p>
+              </div>
+              <span className="text-primary-600">{discountPercentage}%</span>
+            </div>
+          </CardDescription>
+        </CardContent>
+      </Link>
+      <WishlistButton className="absolute top-1 right-1 p-2" />
+    </Card>
   );
 };
 

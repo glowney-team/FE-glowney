@@ -7,13 +7,13 @@ import { AnimatePresence, motion } from 'motion/react';
 interface SelectProps {
   label?: string;
   options: { value: string; label: string }[];
-  value: string;
   onChange: (value: string) => void;
   className?: string;
 }
 
-const Select: React.FC<SelectProps> = ({ label, options, value, onChange, className }) => {
+const Select: React.FC<SelectProps> = ({ label, options, onChange, className }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(options[0]?.value);
 
   return (
     <div className={`relative w-full max-w-[105px] ${className}`}>
@@ -23,7 +23,7 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
         className="focus:ring-primary flex w-full items-center justify-between rounded-lg border border-neutral-200 bg-neutral-50 px-2 py-1 text-sm shadow-xs hover:bg-neutral-50 focus:ring-1"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {options.find((option) => option.value === value)?.label || 'Select'}
+        {options.find((option) => option.value === selectedValue)?.label || 'Select'}
         <ChevronDownIcon
           className={`h-4 w-4 text-neutral-500 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
         />
@@ -33,11 +33,11 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
       <AnimatePresence>
         {isOpen && (
           <motion.ul
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute top-full left-0 z-50 mt-1 w-full rounded-lg border border-neutral-200 bg-white shadow-lg"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-[120%] right-0 left-0 z-10 rounded-lg border border-neutral-200 bg-white p-1 shadow-lg"
           >
             {/* ✅ Label을 첫 번째 항목으로 추가 (선택 불가) */}
             {label && (
@@ -49,22 +49,25 @@ const Select: React.FC<SelectProps> = ({ label, options, value, onChange, classN
               </li>
             )}
 
-            {/* ✅ 드롭다운 항목 */}
+            {/* ✅ 옵션 리스트 */}
             {options.map((option) => (
               <li
                 key={option.value}
                 className={`m-1 flex cursor-pointer items-center justify-between rounded-lg px-2 py-1 text-sm select-none ${
-                  value === option.value
+                  selectedValue === option.value
                     ? 'bg-primary-100 font-semibold text-primary-600'
                     : 'hover:bg-neutral-100'
                 }`}
                 onClick={() => {
+                  setSelectedValue(option.value);
                   onChange(option.value);
                   setIsOpen(false);
                 }}
               >
                 {option.label}
-                {value === option.value && <CheckIcon className="h-3 w-5 text-primary-600" />}
+                {selectedValue === option.value && (
+                  <CheckIcon className="h-3 w-5 text-primary-600" />
+                )}
               </li>
             ))}
           </motion.ul>

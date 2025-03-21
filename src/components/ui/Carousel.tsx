@@ -23,7 +23,6 @@ interface CarouselContextProps {
   api: CarouselApi | null;
   scrollPrev: () => void;
   scrollNext: () => void;
-  scrollTo: (slideIndex: number) => void;
   canScrollPrev: boolean;
   canScrollNext: boolean;
   current: number;
@@ -96,8 +95,10 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
           api,
           scrollPrev: () => api?.scrollPrev(),
           scrollNext: () => api?.scrollNext(),
-          scrollTo: (slideIndex: number) => api?.scrollTo(slideIndex),
-          ...carouselState,
+          canScrollPrev: carouselState.canScrollPrev,
+          canScrollNext: carouselState.canScrollNext,
+          current: carouselState.current,
+          total: carouselState.total,
           loop,
         }}
       >
@@ -116,17 +117,67 @@ const Carousel = React.forwardRef<HTMLDivElement, CarouselProps>(
 );
 Carousel.displayName = 'Carousel';
 
-const CarouselContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => {
-    const { carouselRef } = useCarousel();
+const CarouselContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & { overflow?: string }
+>(({ className, overflow = 'hidden', ...props }, ref) => {
+  const { carouselRef } = useCarousel();
+  return (
+    <div ref={carouselRef} className={cn(`w-full`, `overflow-${overflow}`)}>
+      <div ref={ref} className={cn('flex h-full', className)} {...props} />
+    </div>
+  );
+});
+CarouselContent.displayName = 'CarouselContent';
+
+interface CarouselGradientMaskProps extends React.HTMLAttributes<HTMLDivElement> {
+  leftGradient?: string;
+  rightGradient?: string;
+  width?: string;
+}
+
+const CarouselGradientMask = React.forwardRef<HTMLDivElement, CarouselGradientMaskProps>(
+  (
+    {
+      className,
+      leftGradient = 'from-neutral-50  to-transparent to-20%',
+      rightGradient = 'from-neutral-50  to-transparent to-20%',
+      width = 'w-[100px]',
+      ...props
+    },
+    ref
+  ) => {
+    const { canScrollPrev, canScrollNext, loop } = useCarousel();
+
     return (
-      <div ref={carouselRef} className="overflow-hidden">
-        <div ref={ref} className={cn('flex h-full', className)} {...props} />
-      </div>
+      <>
+        {(canScrollPrev || loop) && (
+          <div
+            ref={ref}
+            className={cn(
+              'pointer-events-none absolute inset-y-0 left-0',
+              width,
+              `bg-gradient-to-r ${leftGradient}`,
+              className
+            )}
+            {...props}
+          />
+        )}
+        {(canScrollNext || loop) && (
+          <div
+            className={cn(
+              'pointer-events-none absolute inset-y-0 right-0',
+              width,
+              `bg-gradient-to-l ${rightGradient}`,
+              className
+            )}
+          />
+        )}
+      </>
     );
   }
 );
-CarouselContent.displayName = 'CarouselContent';
+CarouselGradientMask.displayName = 'CarouselGradientMask';
 
 const CarouselItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
@@ -159,8 +210,8 @@ const CarouselNavigationButton = React.forwardRef<HTMLButtonElement, CarouselNav
       <button
         ref={ref}
         className={cn(
-          'absolute flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-100/30 opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100',
-          isNext ? 'right-5' : 'left-5',
+          'absolute flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-neutral-950/50 opacity-0 shadow-md backdrop-blur-xs transition-opacity duration-200 group-hover:opacity-100',
+          isNext ? 'right-0' : 'left-0',
           'top-1/2 -translate-y-1/2',
           !canScroll && 'hidden',
           className
@@ -203,7 +254,7 @@ const CarouselIndicator = React.forwardRef<HTMLDivElement, CarouselIndicatorProp
       <div
         ref={ref}
         className={cn(
-          'absolute right-3 bottom-3 rounded-full bg-black/50 px-2 py-1 text-xs text-neutral-50/50',
+          'absolute right-3 bottom-3 rounded-full bg-black/50 px-2 py-1 text-xs text-neutral-50/50 backdrop-blur-xs',
           className
         )}
         {...props}
@@ -304,4 +355,5 @@ export {
   CarouselNext,
   CarouselIndicator,
   CarouselPaginationDots,
+  CarouselGradientMask,
 };
