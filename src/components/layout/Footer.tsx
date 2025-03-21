@@ -3,7 +3,7 @@ import { Link } from '@/i18n/navigation';
 
 export const Footer = () => {
   return (
-    <footer className="flex w-full justify-center bg-neutral-200">
+    <footer className="mt-20 flex w-full justify-center bg-neutral-200">
       <div className="max-container flex w-full flex-col gap-4 px-container py-8">
         <AppLogo className="text-col" />
         <div className="flex flex-col gap-2 text-sm text-neutral-500">

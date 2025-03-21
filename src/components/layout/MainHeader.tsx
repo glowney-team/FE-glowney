@@ -15,8 +15,7 @@ const MainHeader: React.FC = () => {
         {/* 네비게이션 메뉴 */}
         <nav className="flex gap-10 text-lg font-semibold">
           <NavItem label="추천" href="/" />
-          <NavItem label="병원" href="/hospitals" />
-          <NavItem label="케어" href="/care" />
+          <NavItem label="병원" href="/clinics" />
         </nav>
 
         {/* 검색 아이콘 */}
@@ -36,7 +35,13 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ label, href }) => {
   const pathname = usePathname();
   const locale = useLocale();
-  const isActive = `/${locale}${pathname}` === `/${locale}${href}`;
+  const fullPath = `/${locale}${pathname}`;
+  const targetPath = `/${locale}${href}`;
+
+  const isActive =
+    href === '/'
+      ? fullPath === targetPath || fullPath === `/${locale}` // 홈 경로는 정확히 일치할 때만
+      : fullPath.startsWith(targetPath); // 다른 경로는 시작 부분 일치
 
   return (
     <Link
